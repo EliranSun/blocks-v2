@@ -102,7 +102,8 @@ export const Blocks = ({ blockKey, view, date, color }) => {
 
     if (view === View.YEAR) {
         return (
-            <div className="max-w-[90vw] overflow-x-auto space-y-2 w-fit mx-auto">
+            <div className="w-[90vw] max-w-4xl flex flex-col 
+            items-start overflow-x-auto space-y-2 mx-auto">
                 {blocksData.map((month, monthIndex) => (
                     <div key={monthIndex} className="flex gap-2 items-center">
                         <span className="text-xs font-mono w-8 text-right">{month.monthName}</span>
@@ -123,18 +124,18 @@ export const Blocks = ({ blockKey, view, date, color }) => {
     }
 
     return (
-        <div className={classNames('grid gap-2 w-fit mx-auto', {
-            'grid-cols-7': view === View.WEEK || view === View.MONTH
-        })}>
-            {blocksData.map((block, index) => (
-                <Block
-                    color={color}
-                    key={index}
-                    isSelected={block.date && selectedDates.has(block.date.getTime())}
-                    onClick={() => handleBlockClick(block)}
-                    isEmpty={block.isEmpty}
-                />
-            ))}
+        <div className="w-[90vw] max-w-4xl flex flex-col items-start overflow-x-auto space-y-2 mx-auto">
+            <div className={classNames('w-fit grid gap-2 mx-auto grid-cols-7')}>
+                {blocksData.map((block, index) => (
+                    <Block
+                        color={color}
+                        key={index}
+                        isSelected={block.date && selectedDates.has(block.date.getTime())}
+                        onClick={() => handleBlockClick(block)}
+                        isEmpty={block.isEmpty}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
