@@ -6,7 +6,7 @@ export const Block = ({ children, onClick, isSelected, isEmpty, color }) => {
             onClick={onClick}
             className={classNames("size-4", {
                 [color]: isSelected && !isEmpty,
-                "bg-white/90": !isSelected && !isEmpty,
+                "bg-white/80": !isSelected && !isEmpty,
                 "bg-transparent": isEmpty,
                 "cursor-pointer": !isEmpty,
             })}>

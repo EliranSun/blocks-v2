@@ -102,12 +102,12 @@ export const Blocks = ({ blockKey, view, date, color }) => {
 
     if (view === View.YEAR) {
         return (
-            <div className="w-[90vw] max-w-4xl flex flex-col 
-            items-start overflow-x-auto space-y-2 mx-auto">
+            <div className="w-full max-w-4xl flex flex-row text-center justify-center 
+            gap-2 mx-auto px-4 overflow-x-auto">
                 {blocksData.map((month, monthIndex) => (
-                    <div key={monthIndex} className="flex gap-2 items-center">
-                        <span className="text-xs font-mono w-8 text-right">{month.monthName}</span>
-                        <div className="flex gap-2">
+                    <div key={monthIndex} className="flex flex-col gap-2 items-center">
+                        <span className="text-xs font-mono">{month.monthName.slice(0, 1)}</span>
+                        <div className="flex flex-col gap-2">
                             {month.days.map((block) => (
                                 <Block
                                     color={color}
