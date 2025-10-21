@@ -10,7 +10,7 @@ const today = new Date();
 
 function App() {
   const [habit, setHabit] = useState(Habits.Css);
-  const [view, setView] = useState(View.MONTH);
+  const [view, setView] = useState(View.WEEK);
 
   return (
     <section className={classNames('flex items-center justify-center flex-col gap-8 p-8', {
@@ -29,10 +29,10 @@ function App() {
         </h1>
         <div className='flex gap-2 w-full justify-center'>
           <Button
-            active={view === View.YEAR}
+            active={view === View.WEEK}
             color={habit.color}
-            onClick={() => setView(View.YEAR)}>
-            {format(today, 'yyyy')}
+            onClick={() => setView(View.WEEK)}>
+            Week {format(today, 'ww')}
           </Button>
           <Button
             active={view === View.MONTH}
@@ -41,10 +41,10 @@ function App() {
             {format(today, 'MMMM')}
           </Button>
           <Button
-            active={view === View.WEEK}
+            active={view === View.YEAR}
             color={habit.color}
-            onClick={() => setView(View.WEEK)}>
-            Week {format(today, 'ww')}
+            onClick={() => setView(View.YEAR)}>
+            {format(today, 'yyyy')}
           </Button>
         </div>
       </div>
