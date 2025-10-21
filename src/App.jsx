@@ -13,9 +13,6 @@ function App() {
 
   return (
     <section className='flex items-center justify-center flex-col gap-8 p-8'>
-      <div className='flex items-center justify-center'>
-        <Blocks view={view} date={today} color={habit.color} blockKey={habit.name} />
-      </div>
       <div className='flex flex-col gap-4'>
         <h1
           onClick={() => {
@@ -47,6 +44,9 @@ function App() {
             Week {format(today, 'ww')}
           </Button>
         </div>
+      </div>
+      <div className='flex items-center justify-center'>
+        <Blocks view={view} date={today} color={habit.color} blockKey={habit.name} />
       </div>
     </section>
   )
