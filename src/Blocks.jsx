@@ -124,7 +124,7 @@ export const Blocks = ({ blockKey, view, date, color }) => {
     }
 
     return (
-        <div className="w-[90vw] max-w-4xl flex flex-col items-start overflow-x-auto space-y-2 mx-auto">
+        <div className="w-[90vw] max-w-4xl flex flex-col items-center overflow-x-auto space-y-2 mx-auto">
             <div className={classNames('w-fit grid gap-2 mx-auto grid-cols-7')}>
                 {blocksData.map((block, index) => (
                     <Block

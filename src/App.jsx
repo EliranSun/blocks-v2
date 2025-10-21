@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { useState } from 'react';
 import { View, Habits } from './constants';
 import { Blocks } from './Blocks';
+import classNames from 'classnames';
 
 const today = new Date();
 
@@ -12,7 +13,9 @@ function App() {
   const [view, setView] = useState(View.MONTH);
 
   return (
-    <section className='flex items-center justify-center flex-col gap-8 p-8'>
+    <section className={classNames('flex items-center justify-center flex-col gap-8 p-8', {
+      "h-full": view !== View.YEAR
+    })}>
       <div className='flex flex-col gap-4'>
         <h1
           onClick={() => {
@@ -45,7 +48,7 @@ function App() {
           </Button>
         </div>
       </div>
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center justify-center h-full grow-1'>
         <Blocks view={view} date={today} color={habit.color} blockKey={habit.name} />
       </div>
     </section>
